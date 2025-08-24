@@ -1,0 +1,1283 @@
+{
+  "nodes": [
+    {
+      "name": "\n        A microservice architecture",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "lightweight virtualization",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "containerized applications",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "appropriate microservices",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "Each microservice",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "well-defined APIs",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "Docker containers",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "software systems",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "its own process",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "other services",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "microservices",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "communicates",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "API Gateway",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "Kubernetes",
+      "type": "NAMED_ENTITY",
+      "label": "ORG"
+    },
+    {
+      "name": "a method",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "clusters",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "requests",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "Docker",
+      "type": "NAMED_ENTITY",
+      "label": "PERSON"
+    },
+    {
+      "name": "routes",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "that",
+      "type": "CONCEPT",
+      "label": "NOUN_PHRASE"
+    },
+    {
+      "name": "Software",
+      "type": "NAMED_ENTITY",
+      "label": "ORG"
+    }
+  ],
+  "relations": [
+    {
+      "source": "\n        A microservice architecture",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "Docker containers",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "well-defined APIs",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "Each microservice",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "appropriate microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "containerized applications",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "\n        A microservice architecture",
+      "target": "lightweight virtualization",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "Docker containers",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "well-defined APIs",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "Each microservice",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "appropriate microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "lightweight virtualization",
+      "target": "containerized applications",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "Docker containers",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "well-defined APIs",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "Each microservice",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "containerized applications",
+      "target": "appropriate microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "Docker containers",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "well-defined APIs",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "appropriate microservices",
+      "target": "Each microservice",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "Docker containers",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Each microservice",
+      "target": "well-defined APIs",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "well-defined APIs",
+      "target": "Docker containers",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "software systems",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker containers",
+      "target": "lightweight virtualization",
+      "relation": "PROVIDES",
+      "confidence": 0.8
+    },
+    {
+      "source": "software systems",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "software systems",
+      "target": "its own process",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "its own process",
+      "target": "other services",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "other services",
+      "target": "microservices",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "microservices",
+      "target": "communicates",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "communicates",
+      "target": "API Gateway",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "Kubernetes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "API Gateway",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "Kubernetes",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Kubernetes",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Kubernetes",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Kubernetes",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Kubernetes",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Kubernetes",
+      "target": "a method",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Kubernetes",
+      "target": "containerized applications",
+      "relation": "RELATED_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "a method",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "a method",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "a method",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "a method",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "a method",
+      "target": "clusters",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "clusters",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "clusters",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "clusters",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "clusters",
+      "target": "requests",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "requests",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "requests",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "requests",
+      "target": "Docker",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "Docker",
+      "target": "routes",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    },
+    {
+      "source": "routes",
+      "target": "that",
+      "relation": "RELATED_TO",
+      "confidence": 0.5
+    }
+  ],
+  "statistics": {
+    "total_nodes": 21,
+    "total_relations": 193,
+    "node_types": [
+      {
+        "type": "CONCEPT",
+        "count": 18
+      },
+      {
+        "type": "NAMED_ENTITY",
+        "count": 3
+      }
+    ]
+  }
+}
