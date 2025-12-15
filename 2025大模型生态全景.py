@@ -13,27 +13,31 @@ st.caption("涵盖 Alibaba Qwen、Anthropic Claude、OpenAI 官方模型体系")
 # ======================
 # 阿里巴巴 Qwen
 # ======================
-with st.expander("📌 战略概览：开源筑生态 + 闭源打高端", expanded=False):
+with st.expander("📌 战略概览：开源筑生态 + 闭源打高端", expanded=True):
     st.markdown("""
     - **开源侧**：Hugging Face / ModelScope 开放数十款模型（Apache 2.0），全球下载 **6 亿+**，衍生模型 **17 万+**
     - **闭源侧**：通过 **阿里云百炼** 和 **Qwen Chat** 提供 API（如 Qwen3-Max），不开放权重
     """)
+tab_cn, tab_global = st.tabs(["🇨🇳 国内模型", "🌍 海外模型"])
 
-tab_qwen, tab_claude, tab_openai, tab_google_ai, tab_baidu, tab_cohere, tab_huawei, tab_deepmind, tab_meta, tab_microsoft,tab_stability, tab_perplexity,tab_tencent = st.tabs([
-    "🧠 阿里巴巴 Qwen",
-    "⚖️ Anthropic Claude",
-    "🔵 OpenAI",
-    "🟣 Google AI",
-    "🪞 百度文心",
-    "🇨🇦 Cohere",
-    "🇨🇳 华为盘古",
-    "🔬 Google DeepMind",
-    "🦛 Meta AI",
-    "🔬 Google DeepMind",
-    "🎨 Stability AI",
-    "🔍 Perplexity AI",
-    "🇨🇳 腾讯 Tencent HY"
-])
+with tab_cn:
+    tab_qwen, tab_baidu, tab_huawei, tab_tencent = st.tabs([
+        "🧠 Qwen", "🪞 百度", "PG 华为", "HY 腾讯"
+    ])
+
+
+with tab_global:
+    tab_claude, tab_openai, tab_google_ai, tab_cohere, tab_deepmind, tab_meta, tab_microsoft,tab_stability, tab_perplexity = st.tabs([
+        "⚖️ Anthropic Claude",
+        "🔵 OpenAI",
+        "🟣 Google AI",
+        "🇨🇦 Cohere",
+        "🔬 Google DeepMind",
+        "🦛 Meta AI",
+        "🔷 Microsoft AI",
+        "🎨 Stability AI",
+        "🔍 Perplexity AI",
+    ])
 # ----------------------
 # Qwen Tab
 # ----------------------
@@ -788,6 +792,7 @@ with tab_deepmind:
     - **闭源为主，但关键科学成果（如 AlphaFold）选择开源以推动领域进步**；
     - **深度绑定 Google Cloud 与硬件（TPU v5e/v6）**，形成技术闭环。
     """)
+
 # ----------------------
 # Google AI 模型全家桶 Tab
 # ----------------------
