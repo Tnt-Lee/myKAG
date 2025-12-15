@@ -17,7 +17,7 @@ from pathlib import Path
 import pandas as pd
 
 # 配置日志
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, filename='app.log', format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 class EntityRelationExtractor:
@@ -78,8 +78,9 @@ class EntityRelationExtractor:
                 try:
                     self.nlp_models[lang] = spacy.blank(lang)
                     logger.info(f"使用 {lang} 空白模型作为备用")
-                except:
-                    logger.error(f"无法为 {lang} 创建任何模型")
+                except Exception as e:
+                    logger.error(f"无法为 {lang} 创建任何模型: {e}")
+                    self.nlp_models[lang] = None  # 设置为None而不是跳过
                     continue
     
     def detect_language(self, text: str) -> str:
@@ -94,44 +95,64 @@ class EntityRelationExtractor:
     
     def extract_entities(self, text: str) -> List[Dict]:
         """提取实体"""
+        if not text or not text.strip():
+            return []
+            
         lang = self.detect_language(text)
-        if lang not in self.nlp_models:
+        if lang not in self.nlp_models or self.nlp_models[lang] is None:
             lang = 'en'  # 默认使用英语
+            if lang not in self.nlp_models or self.nlp_models[lang] is None:
+                logger.warning("没有可用的NLP模型，使用基础文本处理")
+                return self._basic_entity_extraction(text)
         
         nlp = self.nlp_models[lang]
-        doc = nlp(text)
+        
+        try:
+            doc = nlp(text)
+        except Exception as e:
+            logger.error(f"NLP处理失败: {e}")
+            return self._basic_entity_extraction(text)
         
         entities = []
         
         # 命名实体识别
-        for ent in doc.ents:
-            entities.append({
-                'text': ent.text,
-                'label': ent.label_,
-                'start': ent.start_char,
-                'end': ent.end_char,
-                'type': 'NAMED_ENTITY'
-            })
+        try:
+            for ent in doc.ents:
+                entities.append({
+                    'text': ent.text,
+                    'label': ent.label_,
+                    'start': ent.start_char,
+                    'end': ent.end_char,
+                    'type': 'NAMED_ENTITY'
+                })
+        except Exception as e:
+            logger.warning(f"命名实体识别失败: {e}")
         
         # 名词短语提取（根据语言选择不同策略）
-        if lang == 'en':
-            # 英语使用noun_chunks
-            for chunk in doc.noun_chunks:
-                if len(chunk.text.strip()) > 1:
-                    entities.append({
-                        'text': chunk.text,
-                        'label': 'NOUN_PHRASE',
-                        'start': chunk.start_char,
-                        'end': chunk.end_char,
-                        'type': 'CONCEPT'
-                    })
-        else:
-            # 中文和日语使用基于词性的名词提取
-            entities.extend(self._extract_nouns_by_pos(doc, lang))
+        try:
+            if lang == 'en':
+                # 英语使用noun_chunks
+                if hasattr(doc, 'noun_chunks'):
+                    for chunk in doc.noun_chunks:
+                        if len(chunk.text.strip()) > 1:
+                            entities.append({
+                                'text': chunk.text,
+                                'label': 'NOUN_PHRASE',
+                                'start': chunk.start_char,
+                                'end': chunk.end_char,
+                                'type': 'CONCEPT'
+                            })
+                else:
+                    entities.extend(self._extract_nouns_by_pos(doc, lang))
+            else:
+                # 中文和日语使用基于词性的名词提取
+                entities.extend(self._extract_nouns_by_pos(doc, lang))
+        except Exception as e:
+            logger.warning(f"名词短语提取失败: {e}")
         
         # 去重并按重要性排序
         unique_entities = self._deduplicate_entities(entities)
-        return unique_entities
+        return unique_entities if unique_entities else []
     
     def _extract_nouns_by_pos(self, doc, lang: str) -> List[Dict]:
         """基于词性标注提取名词（用于中文和日语）"""
@@ -217,9 +238,17 @@ class EntityRelationExtractor:
     
     def extract_relations(self, text: str, entities: List[Dict]) -> List[Dict]:
         """提取实体间关系"""
+        if not entities:  # 如果没有实体，返回空列表
+            return []
+            
         lang = self.detect_language(text)
         if lang not in self.nlp_models:
             lang = 'en'
+        
+        # 如果没有可用的NLP模型，只使用共现关系
+        if lang not in self.nlp_models or self.nlp_models[lang] is None:
+            logger.warning(f"没有可用的 {lang} 模型，只使用共现关系")
+            return self._extract_cooccurrence_relations(text, entities)
         
         nlp = self.nlp_models[lang]
         doc = nlp(text)
@@ -227,46 +256,61 @@ class EntityRelationExtractor:
         relations = []
         
         # 基于依存句法分析的关系抽取
-        for sent in doc.sents:
-            sent_relations = self._extract_sentence_relations(sent, entities, lang)
-            relations.extend(sent_relations)
+        try:
+            for sent in doc.sents:
+                sent_relations = self._extract_sentence_relations(sent, entities, lang)
+                if sent_relations:  # 检查是否为None
+                    relations.extend(sent_relations)
+        except Exception as e:
+            logger.warning(f"依存句法分析失败: {e}")
         
         # 基于共现的关系抽取
-        cooccurrence_relations = self._extract_cooccurrence_relations(text, entities)
-        relations.extend(cooccurrence_relations)
+        try:
+            cooccurrence_relations = self._extract_cooccurrence_relations(text, entities)
+            if cooccurrence_relations:  # 检查是否为None
+                relations.extend(cooccurrence_relations)
+        except Exception as e:
+            logger.warning(f"共现关系抽取失败: {e}")
         
-        return relations
+        return relations if relations else []
     
     def _extract_sentence_relations(self, sent, entities: List[Dict], lang: str) -> List[Dict]:
         """从单个句子中提取关系"""
         relations = []
         
+        if not sent or not entities:
+            return relations
+        
         # 获取句子中的实体
         sent_entities = []
         for entity in entities:
-            if entity['start'] >= sent.start_char and entity['end'] <= sent.end_char:
-                sent_entities.append(entity)
+            if entity and 'start' in entity and 'end' in entity:
+                if entity['start'] >= sent.start_char and entity['end'] <= sent.end_char:
+                    sent_entities.append(entity)
         
         if len(sent_entities) < 2:
             return relations
         
         # 基于依存关系提取
-        for token in sent:
-            if token.dep_ in ['nsubj', 'nsubjpass'] and token.head.pos_ == 'VERB':
-                subj_entity = self._find_entity_by_token(token, sent_entities)
-                
-                # 查找宾语
-                for child in token.head.children:
-                    if child.dep_ in ['dobj', 'pobj']:
-                        obj_entity = self._find_entity_by_token(child, sent_entities)
-                        
-                        if subj_entity and obj_entity:
-                            relations.append({
-                                'source': subj_entity['text'],
-                                'target': obj_entity['text'],
-                                'relation': self._determine_relation_type(token.head.text, lang),
-                                'confidence': 0.8
-                            })
+        try:
+            for token in sent:
+                if token.dep_ in ['nsubj', 'nsubjpass'] and token.head.pos_ == 'VERB':
+                    subj_entity = self._find_entity_by_token(token, sent_entities)
+                    
+                    # 查找宾语
+                    for child in token.head.children:
+                        if child.dep_ in ['dobj', 'pobj']:
+                            obj_entity = self._find_entity_by_token(child, sent_entities)
+                            
+                            if subj_entity and obj_entity:
+                                relations.append({
+                                    'source': subj_entity['text'],
+                                    'target': obj_entity['text'],
+                                    'relation': self._determine_relation_type(token.head.text, lang),
+                                    'confidence': 0.8
+                                })
+        except Exception as e:
+            logger.warning(f"句法分析关系提取失败: {e}")
         
         return relations
     
@@ -274,31 +318,41 @@ class EntityRelationExtractor:
         """基于共现关系提取"""
         relations = []
         
+        if not text or not entities:
+            return relations
+        
         # 在同一段落中的实体建立RELATED_TO关系
         paragraphs = text.split('\n\n')
         
         for para in paragraphs:
+            if not para.strip():
+                continue
+                
             para_entities = []
             for entity in entities:
-                if entity['text'] in para:
+                if entity and 'text' in entity and entity['text'] in para:
                     para_entities.append(entity)
             
             # 两两建立关系
             for i in range(len(para_entities)):
                 for j in range(i + 1, len(para_entities)):
-                    relations.append({
-                        'source': para_entities[i]['text'],
-                        'target': para_entities[j]['text'],
-                        'relation': 'RELATED_TO',
-                        'confidence': 0.5
-                    })
+                    if para_entities[i] and para_entities[j]:
+                        relations.append({
+                            'source': para_entities[i]['text'],
+                            'target': para_entities[j]['text'],
+                            'relation': 'RELATED_TO',
+                            'confidence': 0.5
+                        })
         
         return relations
     
     def _find_entity_by_token(self, token, entities: List[Dict]):
         """根据token查找对应的实体"""
+        if not token or not entities:
+            return None
+            
         for entity in entities:
-            if token.text in entity['text']:
+            if entity and 'text' in entity and token.text in entity['text']:
                 return entity
         return None
     
@@ -601,7 +655,7 @@ def main():
         
         # 处理多语言文档
         for doc_type, text in sample_texts.items():
-            logger.info(f"\n处理 {doc_type} 文档...")
+            logger.info(f"处理 {doc_type} 文档...")
             try:
                 result = kg_builder.build_from_text(text, clear_existing=(doc_type == 'insurance_zh'))
                 print(f"{doc_type} 处理结果: {result}")
